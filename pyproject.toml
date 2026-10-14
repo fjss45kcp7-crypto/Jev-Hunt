@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev-hunt"
+version = "0.1.0"
+description = "Training-free evidence acquisition and selective decision layer for frozen HeadHunt-VAD"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.23"]
+
+[project.optional-dependencies]
+jev = ["typesafe-sdk>=0.7"]
+headhunt = ["joblib>=1.2", "scikit-learn>=1.2"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+jev-hunt = "jev_hunt.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

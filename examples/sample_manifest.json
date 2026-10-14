@@ -1,0 +1,81 @@
+{
+  "_NOTICE": "SYNTHETIC demonstration of cached text evidence. No real video or ground truth.",
+  "logits": [-2.2, -1.8, -0.8, 0.65, -0.5, -1.7, 1.6, -2.3],
+  "records": [
+    {
+      "video_id": "synthetic_clip",
+      "segment_index": 3,
+      "start_s": 6.0,
+      "end_s": 8.0,
+      "claims": {
+        "contact": "Did two moving persons physically collide?",
+        "context": "Was the movement a normal passing interaction?"
+      },
+      "facts": [
+        {
+          "evidence_id": "initial-3",
+          "claim_id": "contact",
+          "text": "Two silhouettes overlap; contact cannot be confirmed because the hands are occluded.",
+          "frame_ids": [7],
+          "timestamp_s": 7.0,
+          "polarity": "unknown",
+          "visible": false,
+          "phase": "initial"
+        }
+      ],
+      "unresolved_claim_ids": ["contact"]
+    },
+    {
+      "video_id": "synthetic_clip",
+      "segment_index": 6,
+      "start_s": 12.0,
+      "end_s": 14.0,
+      "claims": {"contact": "Was physical contact visible?"},
+      "facts": [
+        {
+          "evidence_id": "initial-6",
+          "claim_id": "contact",
+          "text": "A person rapidly moves toward another; physical contact is not visible.",
+          "frame_ids": [4],
+          "timestamp_s": 13.0,
+          "polarity": "unknown",
+          "visible": false,
+          "phase": "initial"
+        }
+      ],
+      "unresolved_claim_ids": ["contact"]
+    }
+  ],
+  "rescans": {
+    "3": {
+      "temporal_dense": [
+        {
+          "evidence_id": "new-3",
+          "claim_id": "contact",
+          "text": "Synthetic example: an additional timestamp visibly shows contact.",
+          "frame_ids": [10],
+          "timestamp_s": 7.25,
+          "polarity": "anomaly",
+          "visible": true
+        }
+      ],
+      "temporal_context": [],
+      "zoom_with_context": []
+    },
+    "6": {
+      "temporal_dense": [],
+      "zoom_with_context": [],
+      "temporal_context": [
+        {
+          "evidence_id": "new-6",
+          "claim_id": "contact",
+          "text": "Synthetic example: surrounding timestamps show an ordinary passing interaction.",
+          "frame_ids": [13],
+          "timestamp_s": 13.3,
+          "polarity": "normal",
+          "visible": true
+        }
+      ]
+    }
+  }
+}
